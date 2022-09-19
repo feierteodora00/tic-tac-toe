@@ -1,4 +1,7 @@
 # tic-tac-toe
+
+This project recreates the tic-tac-toe game in the form of a web app using React. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
