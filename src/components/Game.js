@@ -193,19 +193,18 @@ class Game extends React.Component {
         //console.log(winner)
     }
 
-    reloadPage = () => {
-        window.location.replace("/")
-    }
-
     render () {
         let endgame = ""
-        let hidden = true
+        
         if (this.state.winner !== "" && this.state.winner !== "draw"){
-            endgame = "The winner is " + this.state.winner + ". Congratulations !"
-            hidden = false
+            endgame = "The winner is " + this.state.winner + ". Congratulations !\n Click 'OK' to reload the page"
+            setTimeout(() => { window.alert(endgame) }, 100)
+            setTimeout(() => { window.location.reload() }, 100)
+            
         } else if (this.state.winner !== "" && this.state.winner === "draw"){
-            endgame = "Draw, nobody won. Try again !"
-            hidden = false
+            endgame = "Draw, nobody won. Try again !\n Click 'OK' to reload the page"
+            setTimeout(() => { window.alert(endgame) }, 100)
+            setTimeout(() => { window.location.reload() }, 100)
         }
 
         return (
@@ -247,8 +246,7 @@ class Game extends React.Component {
                         </tr>
                     </tbody>
                 </table>
-                <p>{endgame}</p>
-                <button onClick={this.reloadPage} hidden={hidden}>Play again</button>
+                
             </div>
         )
     }
